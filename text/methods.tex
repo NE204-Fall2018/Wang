@@ -1,0 +1,11 @@
+A group of five isotopes were used to collect the signals, Co-60, Cs-137, Ba-133, Eu-152, and Am-241. The signal intensity (i.e. pulse height) of 8192 channels at different energy ranges were recorded. The MCA would be based upon the characteristic energy of the full energy peaks of the five radionuclides used and linear-regressly correlating the peak centroid to its energy using the least square method.
+
+
+\[Energy=slope\cdot Channel\,Number + intercept\]
+
+The full energy peak can be fitted as a gaussian curve to get the centroid (B) of each peak:
+\[f\left( x \right) = A \cdot {e^{ - \frac{{{{\left( {x - B} \right)}^2}}}{{2 \cdot {C^2}}}}}\]
+
+This is acheived by function $curve\_fit$. Upon obtaining the relationship between the centroid of each peak and the corresponding energy, linear regression using the least square method is adopted to correlate the channel number and the energy range.
+
+
