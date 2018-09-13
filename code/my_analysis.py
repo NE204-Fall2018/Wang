@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from scipy import stats
-data=np.loadtxt('../data.txt')
+data=np.loadtxt('../lab0_spectral_data.txt')
 xdata=np.arange(0,8191,1)
 def gaus(x,A,B,C):
     return A*np.exp(-(x-B)**2/(2*C**2))
