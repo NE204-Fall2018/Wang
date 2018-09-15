@@ -23,8 +23,8 @@ test :
 
 # Automate running the analysis code
 analysis :
-	cd code/ && python example.py
-	cd code/ && python analysis.py
+	cd code/ && python2 example.py
+	cd code/ && python2 analysis.py
 
 clean :
 	rm -f *.aux *.log *.bbl *.lof *.lot *.blg *.out *.toc *.run.xml *.bcf

@@ -64,7 +64,7 @@ print "the 4th peak of Ba-133 is ", pBa4[1]
 our_guess=(4000,1364,2)
 pBa5,res=curve_fit(gaus,xdata[1356:1371],data[1356:1371,1],p0=our_guess)
 print "the 5th peak of Ba-133 is ", pBa5[1]
-chn=(pAm[1],pCs[1],pCo1[1],pCo2[1],pEu1[1],pEu2[1],pEu3[1],pEu4[1],pEu5[1],pEu6[1],pEu7[1],pEu8[1],pBa1[1],pBa2[1],pBa3[1],pBa4[1],pBa5[1])
+chn=(pCs[1],pCo1[1],pCo2[1],pEu3[1],pEu4[1],pEu5[1],pEu6[1],pEu7[1],pEu8[1],pBa2[1],pBa3[1],pBa4[1],pBa5[1])
 pE=(661.657,1173.228,1332.492,344.2785,411.1165,778.9045,964.072,1408.013,1112.076,276.3989,302.8508,356.0129,383.8485)
 slope, intercept, r_value, p_value, std_err = stats.linregress(chn,pE)
 xi=np.arange(200,5050)
