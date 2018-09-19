@@ -1,21 +1,24 @@
+# Define variables
 manuscript = report
 latexopt = -file-line-error -halt-on-error
 
-# Build the PDF of the lab report from the source files
-$(manuscript).pdf: $(manuscript).tex text/*.tex references.bib images/*.png
+# Generate the lab report in PDF format from the *.tex files
+$(manuscript).pdf: 
+$(manuscript).tex text/*.tex references.bib images/*.png
 	pdflatex $(latexopt) $(manuscript).tex
 	bibtex $(manuscript).aux
 	bibtex $(manuscript).aux
 	pdflatex $(latexopt) $(manuscript).tex
 	pdflatex $(latexopt) $(manuscript).tex
 
-# Get/download necessary data
+# Download data
 data :
 	wget https://www.dropbox.com/s/k692avun0144n90/lab0_spectral_data.txt?dl=0 -O data.txt
 
-# Validate that downloaded data is not corrupted
+# Validate the downloaded data not corrupted by md5 checksum
 validate :
-	echo "WARNING: make validate has not yet been implemented."
+	md5sum lab0_spectral_data.txt
+	md5sum -c lab0_spectral_data.md5
 
 # Run tests on analysis code
 test :
@@ -25,7 +28,7 @@ test :
 analysis :
 	cd code/ && python2 example.py
 	cd code/ && python2 analysis.py
-
+# Clean unnecessary files in the repository
 clean :
 	rm -f *.aux *.log *.bbl *.lof *.lot *.blg *.out *.toc *.run.xml *.bcf
 	rm -f text/*.aux
