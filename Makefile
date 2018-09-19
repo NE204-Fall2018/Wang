@@ -11,7 +11,7 @@ $(manuscript).pdf: $(manuscript).tex text/*.tex references.bib images/*.png
 
 # Get/download necessary data
 data :
-	wget https://www.dropbox.com/s/k692avun0144n90/lab0_spectral_data.txt?dl=0 -O data.txt
+	wget https://www.dropbox.com/s/hutmwip3681xlup/lab0_spectral_data.txt?dl=0 -O lab0_spectral_data.txt
 
 # Validate that downloaded data is not corrupted
 validate :
