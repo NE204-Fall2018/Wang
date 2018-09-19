@@ -19,6 +19,8 @@ data :
 validate :
 	md5sum lab0_spectral_data.txt
 	md5sum -c lab0_spectral_data.md5
+# if not validate
+# echo "WARNING: make validate has not yet been implemented."
 
 # Run tests on analysis code
 test :
@@ -28,6 +30,7 @@ test :
 analysis :
 	cd code/ && python2 example.py
 	cd code/ && python2 analysis.py
+	
 # Clean unnecessary files in the repository
 clean :
 	rm -f *.aux *.log *.bbl *.lof *.lot *.blg *.out *.toc *.run.xml *.bcf
